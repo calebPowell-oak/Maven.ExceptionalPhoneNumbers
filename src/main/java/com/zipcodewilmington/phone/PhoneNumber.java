@@ -10,7 +10,7 @@ public final class PhoneNumber {
 
     // default constructor is uncallable
     private PhoneNumber() throws InvalidPhoneNumberFormatException {
-        this(null);
+        phoneNumberString = "";
     }
 
     // non-default constructor is package-protected
