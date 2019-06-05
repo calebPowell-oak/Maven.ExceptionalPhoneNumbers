@@ -4,6 +4,7 @@ import com.zipcodewilmington.exceptions.InvalidPhoneNumberFormatException;
 
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.logging.ConsoleHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -21,7 +22,7 @@ public final class PhoneNumberFactory {
     /**
      * @param phoneNumberCount - number of PhoneNumber objects to instantiate
      * @return array of randomly generated PhoneNumber objects
-     */ //TODO - Implement logic
+     */
     public static PhoneNumber[] createRandomPhoneNumberArray(int phoneNumberCount) {
         ArrayList<PhoneNumber> numberz = new ArrayList<>();
         for(int i = 0; i < phoneNumberCount; i++){
@@ -32,7 +33,7 @@ public final class PhoneNumberFactory {
 
     /**
      * @return an instance of PhoneNumber with randomly generated phone number value
-     */ //TODO - Implement logic
+     */
     public static PhoneNumber createRandomPhoneNumber() {
         Random r = new Random();
         String area = "", office = "", line = "";
@@ -51,7 +52,7 @@ public final class PhoneNumberFactory {
      * @param centralOfficeCode - 3 digit code
      * @param phoneLineCode     - 4 digit code
      * @return a new phone number object
-     */ //TODO - if input is valid, return respective PhoneNumber object, else return null
+     */
     public static PhoneNumber createPhoneNumberSafely(int areaCode, int centralOfficeCode, int phoneLineCode) {
         String phoneNumberString = "";
         phoneNumberString = "(" + areaCode + ")-" + centralOfficeCode + "-" + phoneLineCode;
@@ -67,7 +68,7 @@ public final class PhoneNumberFactory {
      * @param phoneNumberString - some String corresponding to a phone number whose format is `(###)-###-####`
      * @return a new phone number object
      * @throws InvalidPhoneNumberFormatException - thrown if phoneNumberString does not match acceptable format
-     */ // TODO - Add throws statement to method signature
+     */
     public static PhoneNumber createPhoneNumber(String phoneNumberString) throws InvalidPhoneNumberFormatException{
         try {
             logger.log(Level.FINE, "Attempting to create a new PhoneNumber object with a value of " + phoneNumberString);
